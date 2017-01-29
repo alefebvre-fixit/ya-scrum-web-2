@@ -16,6 +16,12 @@ import { SprintService } from './services/index';
 import { StoryService } from './services/index';
 
 import { StoryModule } from './story/story.module';
+import { SprintModule } from './sprint/sprint.module';
+
+import { RouterModule } from '@angular/router';
+
+import { routes } from './app.routes';
+
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyBRVBLO8VXkurLDQR1eVcVXOmNXyt8SCoc',
@@ -31,12 +37,14 @@ export const firebaseConfig = {
   ],
   imports: [
     StoryModule,
+    SprintModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule.forRoot(),
+    RouterModule.forRoot(routes)
   ],
   providers: [SprintService, StoryService, UserService],
   bootstrap: [AppComponent]
