@@ -1,0 +1,17 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.application-nav-bar{
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.54);
+    z-index: 10;
+}
+
+.section-nav-bar{
+    z-index: -1;
+}
+
+
+.tabbed-content{
+    margin: 60px;
+}

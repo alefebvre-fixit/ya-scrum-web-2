@@ -1,0 +1,66 @@
+<md-toolbar color="primary">
+  <span>Application Title</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <span>Right Aligned Text</span>
+</md-toolbar>
+<md-tab-group>
+  <md-tab label="Tab 1">
+
+      <md-card class="story-card" *ngFor="let story of storiesInProgress;">
+        <md-card-header>
+          <div md-card-avatar class="example-header-image"></div>
+          <md-card-title>{{(story)?.name}}</md-card-title>
+          <md-card-subtitle>Dog Breed</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="assets/img/themes/blueprint-large.jpg">
+        <md-card-content>
+          <p>
+            {{(story)?.description}}
+          </p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>LIKE</button>
+          <button md-button>SHARE</button>
+        </md-card-actions>
+      </md-card>
+
+  </md-tab>
+  
+  
+  <md-tab label="Tab 2">
+
+
+      <md-card class="story-card" *ngFor="let story of storiesPending;">
+        <md-card-header>
+          <div md-card-avatar class="example-header-image"></div>
+          <md-card-title>{{(story)?.name}}</md-card-title>
+          <md-card-subtitle>Dog Breed</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="assets/img/themes/blueprint-large.jpg">
+        <md-card-content>
+          <p>
+            {{(story)?.description}}
+          </p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>LIKE</button>
+          <button md-button>SHARE</button>
+        </md-card-actions>
+      </md-card>
+
+  </md-tab>
+
+</md-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
