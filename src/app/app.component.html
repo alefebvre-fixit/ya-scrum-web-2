@@ -1,19 +1,26 @@
-<md-toolbar color="primary" class="application-nav-bar">
-  <span>Ya-Scrum</span>
-  
-  
-<a [routerLink]="['/sprints']">Sprints</a>
-<a [routerLink]="['/stories']">Stories</a>
-  
+<md-toolbar color="primary" class="toolbar-shadow">
+  <span>
+    <div class="example-sidenav-content">
 
+  </div>
+    
+    Ya-Scrum</span>
   <span class="toolbar-spacer"></span>
   <span>Right Aligned Text</span>
 </md-toolbar>
 
-<router-outlet></router-outlet>
 
 
+<md-sidenav-container>
+  <md-sidenav #sidenav [mode]="'side'" [opened]="true">
+    <a [routerLink]="['/sprints']">Sprints</a>
+    <a [routerLink]="['/stories']">Stories</a>
+  </md-sidenav>
 
+  <router-outlet></router-outlet>
+
+  <!-- primary content -->
+</md-sidenav-container>
 
 
 

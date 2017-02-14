@@ -2,9 +2,11 @@
   flex: 1 1 auto;
 }
 
-.application-nav-bar{
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.54);
+.toolbar-shadow{
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.14);
     z-index: 10;
+    margin: 0px;
+    position: relative;
 }
 
 .section-nav-bar{

@@ -1,4 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Router } from '@angular/router';
 
 import { Story } from '../models/index';
 
@@ -7,12 +9,18 @@ import { Story } from '../models/index';
   templateUrl: './story-card.component.html',
   styleUrls: ['./story-card.component.css']
 })
-export class StoryCardComponent  {
+export class StoryCardComponent {
 
   @Input() story: Story;
 
-  constructor(
+  constructor(private router: Router
   ) {
   }
+
+  public navigateToDetails(id: string) {
+    this.router.navigate([`/stories/${id}`]);
+  }
+
+
 
 }

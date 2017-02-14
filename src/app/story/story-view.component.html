@@ -1,0 +1,47 @@
+<md-toolbar color="primary" class="section-nav-bar">
+  <span>Story</span>
+  <span class="toolbar-spacer"></span>
+
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item (click)="editStory(story)">
+      <md-icon>edit</md-icon>
+      <span>Edit</span>
+    </button>
+    <button md-menu-item disabled>
+      <md-icon>delete</md-icon>
+      <span>Delete</span>
+    </button>
+  </md-menu>
+
+</md-toolbar>
+
+
+
+<div class="story-detail-container">
+
+  <md-card class="story-card">
+    <md-card-header>
+      <md-card-title>{{(story)?.name}}</md-card-title>
+      <md-card-subtitle>Dog Breed</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <h3 md-subheader>Description</h3>
+      <p>
+        {{(story)?.description}}
+      </p>
+
+      <h3 md-subheader>Acceptance Criterias</h3>
+      <p>
+        {{(story)?.acceptanceCriterias}}
+      </p>
+
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>LEARN MORE</button>
+    </md-card-actions>
+  </md-card>
+
+</div>

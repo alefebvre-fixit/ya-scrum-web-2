@@ -1,0 +1,33 @@
+<h2 md-dialog-title>{{story?.name}}</h2>
+
+<md-dialog-content>
+    <form [formGroup]="storyForm" (ngSubmit)="submit()" autocomplete="off" novalidate >
+
+        <md-input-container class="input-full-width">
+            <input md-input placeholder="Title" formControlName="name">
+            <md-hint align="end">some hint</md-hint>
+        </md-input-container>
+        
+        <md-input-container class="input-full-width">
+            <textarea md-input placeholder="Description" rows="8" formControlName="description"></textarea>
+        </md-input-container>
+
+        <md-input-container class="input-full-width">
+            <textarea md-input placeholder="Acceptance Criterias" rows="8" formControlName="criterias"></textarea>
+        </md-input-container>
+
+        <md-input-container class="input-full-width">
+            <textarea md-input placeholder="Comments" rows="4" formControlName="comment"></textarea>
+        </md-input-container>
+
+
+
+    </form>
+</md-dialog-content>
+
+<md-dialog-actions [attr.align]="actionsAlignment">
+
+    <button md-button color="primary" (click)="apply()">Apply</button>
+
+    <button md-button color="secondary" md-dialog-close>Close</button>
+</md-dialog-actions>
