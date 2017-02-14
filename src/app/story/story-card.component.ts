@@ -21,6 +21,8 @@ export class StoryCardComponent {
     this.router.navigate([`/stories/${id}`]);
   }
 
-
+  public progressAsPercentage(): number {
+    return Story.progressAsPercentage(this.story);
+  }
 
 }

@@ -7,7 +7,27 @@
             <input md-input placeholder="Title" formControlName="name">
             <md-hint align="end">some hint</md-hint>
         </md-input-container>
-        
+
+        <div>
+        <md-select placeholder="Type" formControlName="type">
+            <md-option *ngFor="let type of typeList" [value]="type.key">
+            {{type.value}}
+            </md-option>
+        </md-select>
+
+        </div>
+
+        <div>
+
+        <md-select placeholder="Priority" formControlName="priority">
+            <md-option *ngFor="let priority of priorityList" [value]="priority.key">
+            {{priority.value}}
+            </md-option>
+        </md-select>
+
+        </div>
+
+
         <md-input-container class="input-full-width">
             <textarea md-input placeholder="Description" rows="8" formControlName="description"></textarea>
         </md-input-container>

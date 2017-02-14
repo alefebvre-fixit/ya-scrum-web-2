@@ -9,6 +9,16 @@
     <p>
       {{(story)?.description}}
     </p>
+
+    <section class="example-section">
+      
+      <md-progress-bar
+          class="example-margin"
+          [mode]="'determinate'"
+          [value]="progressAsPercentage()">
+      </md-progress-bar>
+
+    </section>
   </md-card-content>
   <md-card-actions>
     <button md-button (click)="navigateToDetails(story?.$key)">LEARN MORE</button>

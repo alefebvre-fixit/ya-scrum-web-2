@@ -19,6 +19,9 @@ export class StoryEditComponent implements OnInit {
   public story: Story;
   public storyForm: FormGroup; // our model driven form
 
+  public typeList: any;
+  public priorityList: any;
+
   constructor(
     public dialogRef: MdDialogRef<StoryEditComponent>,
     public sprintService: SprintService,
@@ -30,11 +33,18 @@ export class StoryEditComponent implements OnInit {
 
   ngOnInit() {
 
+    this.typeList = this.storyService.getStoryTypes();
+    this.priorityList = this.storyService.getStoryPriorities();
+
+
     this.storyForm = this._fb.group({
       name: [this.story.name, [<any>Validators.required]],
       description: [this.story.description, [<any>Validators.required]],
       criterias: [this.story.acceptanceCriterias, [<any>Validators.required]],
       comment: [this.story.comment, [<any>Validators.required]],
+      type: [this.story.type, [<any>Validators.required]],
+      priority: [this.story.priority, [<any>Validators.required]],
+
     });
   }
 
@@ -57,6 +67,8 @@ export class StoryEditComponent implements OnInit {
     this.story.description = this.storyForm.value.description;
     this.story.acceptanceCriterias = this.storyForm.value.criterias;
     this.story.comment = this.storyForm.value.comment;
+    this.story.priority = this.storyForm.value.priority;
+    this.story.type = this.storyForm.value.type;
 
     this.storyService.save(this.story);
 

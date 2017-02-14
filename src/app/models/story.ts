@@ -114,4 +114,12 @@ export class Story {
         return status;
     }
 
+    public static progressAsPercentage(story: Story): number {
+        if (story && story.size > 0) {
+            return (story.progress / story.size) * 100;
+        } else {
+            return 0;
+        }
+    }
+
 }
