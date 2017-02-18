@@ -73,4 +73,8 @@ export class StoryViewComponent implements OnInit {
 
   }
 
+  public progressAsPercentage(): number {
+    return Story.progressAsPercentage(this.story);
+  }
+
 }

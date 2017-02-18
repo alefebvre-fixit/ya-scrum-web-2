@@ -44,7 +44,7 @@ export const firebaseConfig = {
     HttpModule,
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
-    FlexLayoutModule.forRoot(),
+    FlexLayoutModule,
     RouterModule.forRoot(routes)
   ],
   providers: [SprintService, StoryService, UserService],
