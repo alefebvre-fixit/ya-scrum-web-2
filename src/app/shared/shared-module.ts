@@ -4,6 +4,8 @@ import {NavBar} from './navbar/navbar';
 import {MaterialModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
+import {ScrumItems} from './scrum-items/scrum-items';
+import {ComponentSidenav} from './component-sidenav/component-sidenav';
 
 @NgModule({
   imports: [
@@ -12,9 +14,9 @@ import {RouterModule} from '@angular/router';
     BrowserModule,
     MaterialModule,
   ],
-  declarations: [NavBar],
-  exports: [NavBar],
-  providers: [],
+  declarations: [NavBar, ComponentSidenav],
+  exports: [NavBar, ComponentSidenav],
+  providers: [ScrumItems],
   entryComponents: [
   ],
 })

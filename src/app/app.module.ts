@@ -20,10 +20,9 @@ import { SprintModule } from './sprint/sprint.module';
 
 import {SharedModule} from './shared/shared-module';
 
-
 import { RouterModule } from '@angular/router';
 
-import { routes } from './app.routes';
+import { ROUTES } from './app.routes';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 export const firebaseConfig = {
@@ -49,7 +48,7 @@ export const firebaseConfig = {
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     FlexLayoutModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(ROUTES),
     ChartsModule
   ],
   providers: [SprintService, StoryService, UserService],

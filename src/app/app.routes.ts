@@ -9,7 +9,7 @@ import { StoryViewComponent } from './story/story-view.component';
 
 
 // Route Configuration
-export const routes: Routes = [
+export const ROUTES: Routes = [
 
   {
     path: '',
@@ -25,4 +25,4 @@ export const routes: Routes = [
 
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(ROUTES);
