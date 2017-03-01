@@ -39,16 +39,6 @@
   text-align: right;
 }
 
-.analytics-list tr:hover {
-    text-decoration: none;
-    background-color: rgba(0,0,0,0.1);
-}
-
-.analytics .panel-footer{
-    background-color: #ffffff;
-    text-align: right;
-}
-
 .analytics .panel-body{
     padding-top: 0px;
     padding-bottom: 0px;

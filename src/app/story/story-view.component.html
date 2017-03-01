@@ -56,57 +56,79 @@
         
           <md-card class="story-card">
             <md-card-content>
+                <table class="analytics-list ranked">
+                    <tbody>
+                        <tr>
+                            <td>Status</td>
+                            <td>
+                              <md-chip-list>
+                                  <md-chip color="accent" selected="true">{{story?.status}}</md-chip>
+                              </md-chip-list>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>
+                              {{story?.type}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Priority</td>
+                            <td>
+                              {{story?.priority}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>
+                              {{story?.size}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Progress</td>
+                            <td>
+                              {{progressAsPercentage()/100| percent:'1.0-0'}}
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-card-content>
+          </md-card>
+
+        </div>
+        <div class="flex-item" fxFlex="50%">
+          <md-card class="story-card">
+            <md-card-content>
+          		<div style="display: block">
+                <canvas height="180" baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                  [legend]="false" [colors]="colors" [options]="options"></canvas>
+	          	</div>
+            </md-card-content>
+          </md-card>
+        </div>
+        <div class="flex-item" fxFlex="50%">
+          <md-card class="story-card">
+            <md-card-content>
 
 
-        <table class="analytics-list ranked">
-            <tbody>
-                <tr>
-                    <td>Status</td>
-                    <td>
-                       <md-chip-list>
-                          <md-chip color="accent" selected="true">{{story?.status}}</md-chip>
-                      </md-chip-list>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Type</td>
-                    <td>
-                      {{story?.type}}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Priority</td>
-                    <td>
-                      {{story?.priority}}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Size</td>
-                    <td>
-                      {{story?.size}}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Progress</td>
-                    <td>
-                      {{progressAsPercentage()}}
-                    </td>
-                </tr>
-
-
-
-
-            </tbody>
-        </table>
-
+                <table class="analytics-list ranked">
+                    <tbody>
+                        <tr *ngFor="let progress of story?.history; let i = index;">
+                            <td>#{{i}}</td>
+                            <td>{{progress.remaining}}</td>
+                            <td>
+                                {{progress.daily}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
 
             </md-card-content>
           </md-card>
-
         </div>
-
 
 
     </div> 

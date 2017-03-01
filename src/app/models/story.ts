@@ -52,7 +52,7 @@ export class Story {
     }
 
     public static toMap(history: StoryProgress[]): Map<number, StoryProgress> {
-        let result: Map<number, StoryProgress> = new Map<number, StoryProgress>();
+        const result: Map<number, StoryProgress> = new Map<number, StoryProgress>();
 
         if (history) {
             for (let progress of history) {
@@ -67,7 +67,7 @@ export class Story {
         console.log(story.history);
         if (story.history) {
             for (let progress of story.history) {
-                if (progress.day == day) {
+                if (progress.day === day) {
                     return progress;
                 }
             }
@@ -77,7 +77,7 @@ export class Story {
 
     public static createProgress(story: Story, day: number): StoryProgress {
 
-        let result = new StoryProgress();
+        const result = new StoryProgress();
 
         result.storyId = story.$key;
         result.day = day;
@@ -93,7 +93,7 @@ export class Story {
 
     public static setProgress(story: Story, progress: StoryProgress) {
 
-        if (story.history == undefined) {
+        if (story.history === undefined) {
             story.history = new Array<StoryProgress>();
         }
 
@@ -105,10 +105,10 @@ export class Story {
     }
 
     public static getFilterStatus(status: string): string {
-        if ("started" == status || "assigned" == status) {
+        if ("started" === status || "assigned" === status) {
             return "progress";
         }
-        if ("new" == status || undefined == status) {
+        if ("new" === status || undefined === status) {
             return "pending";
         }
         return status;
