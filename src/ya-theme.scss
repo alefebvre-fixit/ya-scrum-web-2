@@ -1,4 +1,6 @@
 @import '~@angular/material/core/theming/all-theme';
+@import './app-theme';
+
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -128,3 +130,4 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($app-theme);
+@include material-docs-app-theme($app-theme);

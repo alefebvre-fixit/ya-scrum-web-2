@@ -7,7 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './ya-scrum-app';
 
 import { AngularFireModule } from 'angularfire2';
 
