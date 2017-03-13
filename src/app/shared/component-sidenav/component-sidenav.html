@@ -32,8 +32,10 @@
       <h3>{{category.name}}</h3>
       <ul>
         <li *ngFor="let component of category.items">
-          <a [routerLink]="['/components/component/', component.id]"
+           
+          <a md-button [routerLink]="['/components/component/', component.id]"
              routerLinkActive="docs-component-viewer-sidenav-item-selected">
+             <md-icon class="example-icon">verified_user</md-icon>
             {{component.name}}
           </a>
         </li>

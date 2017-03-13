@@ -69,6 +69,7 @@ app-component-sidenav {
       transition: all .3s;
       padding: 0 ($sidenav-spacing-unit * 2);
       position: relative;
+      text-align: left;
 
       &.docs-component-viewer-sidenav-item-selected {
         font-weight: 600;
