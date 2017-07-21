@@ -27,7 +27,7 @@
   <md-sidenav #sidenav [mode]="'side'" [opened]="true" class="docs-component-viewer-sidenav">
     <a [routerLink]="['/sprints']">Sprints</a>
     <a [routerLink]="['/stories']">Stories</a>
-
+    <!--
     <nav *ngFor="let category of docItems.getItemsInCategories()">
       <h3>{{category.name}}</h3>
       <ul>
@@ -41,12 +41,17 @@
         </li>
       </ul>
     </nav>
-
+    -->
 
 
   </md-sidenav>
+    <router-outlet></router-outlet>
+
+      <!--
+
   <div class="docs-component-sidenav-content">
     <router-outlet></router-outlet>
   </div>
+  -->
 
 </md-sidenav-container>
